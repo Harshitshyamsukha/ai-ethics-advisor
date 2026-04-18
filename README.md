@@ -88,30 +88,37 @@ npm run dev
 The frontend application will now be running (typically at http://localhost:5173).
 
 📂 Architecture Overview
-
+```
 ai-ethics-advisor/
 │
-├── ethics-ui/                 # React Frontend (Vite + Tailwind)
-│   ├── src/                   # React Source Code
-│   │   ├── components/        # UI Modular Components
-│   │   │   ├── AccountModal.jsx
-│   │   │   ├── DilemmaInput.jsx
-│   │   │   ├── EthicalRiskMeter.jsx
-│   │   │   ├── Login.jsx
-│   │   │   ├── ResultsDisplay.jsx
-│   │   │   ├── SettingsModal.jsx
-│   │   │   └── Sidebar.jsx
-│   │   ├── App.jsx            # Main State Manager
-│   │   ├── index.css          # Tailwind & Theming Variables
-│   │   └── main.jsx           # Application Entry Point
-│   ├── index.html             # Main HTML Template
-│   ├── tailwind.config.js     # Tailwind Custom Configuration
-│   ├── postcss.config.js      # PostCSS Configuration
-│   ├── vite.config.js         # Vite Bundler Configuration
-│   └── package.json           # Frontend Dependencies
+├── ethics-backend/            # Node.js Express API (The Server)
+│   ├── .env                   # Environment variables (JWT_SECRET, CORS, etc.)
+│   ├── .gitignore             # Git ignore list for backend
+│   ├── database.sqlite        # SQLite database for persistence
+│   ├── database.sqlite-shm    # SQLite Shared Memory file (Auto-generated)
+│   ├── database.sqlite-wal    # SQLite Write-Ahead Log (Auto-generated)
+│   ├── package-lock.json      # Exact backend dependency versions
+│   ├── package.json           # Backend dependencies & scripts
+│   ├── README.md              # Backend-specific documentation & security notes
+│   └── server.js              # Main API entry point & security hardening logic
 │
-└── ethics-backend/            # Node.js API
-    ├── .env                   # Environment Variables (Secrets)
-    ├── database.sqlite        # SQLite Database File (auto-generated)
-    ├── server.js              # Hardened API Routes
-    └── package.json           # Backend Dependencies
+└── ethics-ui/                 # React Frontend Application (The Client)
+    ├── src/                   # Source code
+    │   ├── components/        # Reusable UI modules
+    │   │   ├── AccountModal.jsx   # User profile & deletion logic
+    │   │   ├── DilemmaInput.jsx   # Interactive prompt input area
+    │   │   ├── EthicalRiskMeter.jsx # Animated SVG risk gauge
+    │   │   ├── Login.jsx          # Authentication interface
+    │   │   ├── ResultsDisplay.jsx # Markdown renderer & follow-ups
+    │   │   ├── SettingsModal.jsx  # Theming & preferences
+    │   │   └── Sidebar.jsx        # Slide-out history drawer
+    │   ├── App.jsx            # Core application state & layout
+    │   └── index.css          # Tailwind imports & CSS custom properties
+    ├── .gitignore             # Git ignore list for frontend
+    ├── index.html             # Main HTML entry point
+    ├── package-lock.json      # Exact frontend dependency versions
+    ├── package.json           # Frontend dependencies & Vite scripts
+    ├── postcss.config.js      # PostCSS configuration for Tailwind
+    ├── tailwind.config.js     # Tailwind design system configuration
+    └── vite.config.js         # Vite bundler configuration
+```

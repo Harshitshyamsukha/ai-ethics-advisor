@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ethical advisor</title>
+
+  <script>
+    (function () {
+      try {
+        var savedTheme = localStorage.getItem('appTheme');
+        var userStr = localStorage.getItem('user');
+        var userTheme = userStr ? JSON.parse(userStr).theme : null;
+
+        var finalTheme = savedTheme || userTheme || 'dark';
+        document.documentElement.className = finalTheme;
+      } catch (e) { }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+node_modules/
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Database files
+*.sqlite
+*.sqlite-*
